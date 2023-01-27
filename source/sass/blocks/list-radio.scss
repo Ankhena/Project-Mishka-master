@@ -1,0 +1,66 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+.list-radio {
+  @include mixins.list-reset;
+  display: flex;
+  flex-direction: column;
+  gap: 7px 0;
+
+  @media (min-width: variables.$width-tablet) {
+    gap: 24px 0;
+  }
+}
+
+.list-radio__input-radio:checked + .list-radio__mark-radio {
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: variables.$moderate-aquamarine-2;
+  }
+
+  @media (min-width: variables.$width-tablet) {
+    &::after {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.list-radio__mark-radio {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  box-shadow: inset 0 0 0 2px variables.$dark-bluish-black;
+  border-radius: 50%;
+
+  @media (min-width: variables.$width-tablet) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+.list-radio__input-radio:hover:not(:disabled) + .list-radio__mark-radio,
+.list-radio__input-radio:focus-visible + .list-radio__mark-radio {
+  box-shadow: inset 0 0 0 2px variables.$moderate-aquamarine-3;
+}
+
+.list-radio__input-radio:active:not(:disabled) + .list-radio__mark-radio {
+  box-shadow: inset 0 0 0 2px rgba(variables.$dark-main, 0.3);
+}
+
+.list-radio__input-radio:disabled + .list-radio__mark-radio {
+  opacity: 0.3;
+  cursor: default;
+}

@@ -1,0 +1,16 @@
+@use "../global/variables.scss";
+
+.page {
+  height: 100%;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.page__body {
+  min-height: 100%;
+  margin: 0;
+  color: variables.$dark-main;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+}

@@ -1,0 +1,146 @@
+@use "../global/mixins.scss";
+@use "../global/variables.scss";
+
+.product {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: variables.$width-tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 334px);
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.product:hover .product__group-info {
+  box-shadow: variables.$shadow-border, variables.$box-shadow-3;
+}
+
+.product:active .product__group-info {
+  box-shadow: variables.$shadow-border, variables.$box-shadow-1;
+}
+
+.product__image {
+  display: block;
+  object-fit: cover;
+}
+
+.product__link {
+  @include mixins.link-reset;
+
+  &:focus-visible {
+    color: variables.$shamrock;
+    outline: 2px solid variables.$shamrock;
+  }
+}
+
+.product__group-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 28px 27px 26px 28px;
+  box-shadow: inset 0 0 0 1px variables.$linen;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 28px 33px 25px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    padding: 28px 33px 25px 28px;
+  }
+}
+
+.product__text-group {
+  margin: 0 0 18px;
+
+  @media (min-width: variables.$width-tablet) {
+    margin: 0;
+    padding: 0 26px 0 0;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    padding: 0 13px 0 0;
+    margin: 0 0 12px;
+  }
+}
+
+.product__title {
+  margin: 0 0 5px;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+
+  @media (min-width: variables.$width-tablet) {
+    margin: 0 0 8px;
+    font-size: 20px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    margin: 0 0 5px;
+  }
+}
+
+.product__parameters {
+  margin: 0;
+  font-size: 13px;
+  line-height: 30px;
+
+  @media (min-width: variables.$width-tablet) {
+    font-size: 15px;
+  }
+}
+
+.product__button-group {
+  padding: 24px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: inset 0 1px 0 0 variables.$linen;
+
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 25px 0 0;
+  }
+}
+
+.product__price {
+  font-size: 15px;
+
+  @media (min-width: variables.$width-tablet) {
+    font-size: 17px;
+  }
+}
+
+.product__button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid variables.$shamrock;
+    outline-offset: 3px;
+    border-radius: 50%;
+  }
+}
+
+.product__button:hover .product__button-icon {
+  color: variables.$moderate-aquamarine-1;
+}
+
+.product__button:focus-visible .product__button-icon {
+  color: variables.$moderate-aquamarine-1;
+}
+
+.product__button:active .product__button-icon {
+  color: rgba(variables.$moderate-aquamarine-1, 0.3);
+}
+
+.product__button-icon {
+  color: rgba(variables.$dark-main, 0.2);
+}

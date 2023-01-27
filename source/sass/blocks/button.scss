@@ -1,0 +1,65 @@
+@use "../global/variables.scss";
+
+.button {
+  display: block;
+  padding: 16px 0;
+  width: 260px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  color: variables.$dark-bluish-black;
+  box-shadow: inset 0 0 0 2px variables.$dark-bluish-black;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &--tag-button {
+    font-family: inherit;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &--spacing {
+    @media (min-width: variables.$width-tablet) {
+      letter-spacing: -1px;
+    }
+  }
+
+  &:hover {
+    background-color: variables.$dark-bluish-black;
+    color: variables.$light-main;
+  }
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 2px variables.$shamrock;
+    outline: none;
+  }
+
+  &:active {
+    background-color: variables.$dark-bluish-black;
+    color: rgba(variables.$light-main, 0.3);
+  }
+
+  &--modal {
+    width: 100%;
+    padding: 18px 0;
+    font-size: 17px;
+    line-height: 16px;
+    background-color: variables.$moderate-aquamarine-1;
+    color: variables.$light-main;
+    box-shadow: none;
+
+    &:hover,
+    &:focus-visible {
+      outline: none;
+      background-color: variables.$shamrock;
+      color: variables.$light-main;
+    }
+
+    &:active {
+      background-color: rgba(variables.$shamrock, 0.3);
+      color: variables.$light-main;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@use "../global/mixins.scss";
+@use "../global/variables.scss";
+
+.copyright__text {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 18px;
+}
+
+.copyright__link {
+  @include mixins.link-reset;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 182px;
+}
+
+.copyright__link:focus-visible {
+  outline: solid 2px variables.$shamrock;
+  outline-offset: 4px;
+}
+
+.copyright__link:hover .copyright__logo-icon,
+.copyright__link:focus-visible .copyright__logo-icon {
+  color: variables.$shamrock;
+}
+
+.copyright__link:active .copyright__logo-icon {
+  color: rgba(variables.$shamrock, 0.3);
+}
+
+.copyright__logo-icon {
+  color: variables.$moderate-aquamarine-1;
+}

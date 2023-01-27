@@ -1,0 +1,161 @@
+@use "../global/mixins.scss";
+@use "../global/variables.scss";
+
+.production {
+  padding: 0 30px;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 0 50px;
+  }
+}
+
+.production__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 0 33px;
+  margin: 0 auto;
+  width: 260px;
+  box-shadow: inset 0 0 0 1px variables.$linen;
+
+  &:hover {
+    box-shadow: variables.$shadow-border, variables.$box-shadow-3;
+  }
+
+  &:active {
+    box-shadow: variables.$shadow-border, variables.$box-shadow-1;
+  }
+
+  @media (min-width: 610px) {
+    width: 550px;
+  }
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 0;
+    width: 668px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    display: grid;
+    grid-template-areas: "player title" "player button";
+    align-items: start;
+    width: 1050px;
+  }
+}
+
+.production__title-wrapper {
+  padding: 0 33px 0 34px;
+  margin: 0 0 27px;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 0 50px 0;
+    margin: 0 0 24px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    grid-area: title;
+    padding: 47px 49px 0 79px;
+    margin: 0 0 27px;
+  }
+}
+
+.production__title {
+  position: relative;
+  margin: 0;
+  padding-left: 57px;
+  font-weight: 700;
+  font-size: 17px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 22px;
+    background: url("../img/sprite.svg#video") 0/32px 22px no-repeat;
+  }
+
+  @media (min-width: variables.$width-tablet) {
+    font-size: 20px;
+
+    &::before {
+      top: 8px;
+      left: -8px;
+    }
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    &::before {
+      transform: none;
+      position: static;
+      margin: 0 0 28px;
+    }
+  }
+}
+
+.production__player {
+  margin: 0 0 35px;
+
+  @media (min-width: variables.$width-tablet) {
+    order: -1;
+    margin: 0 0 42px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    grid-area: player;
+    padding: 0 0 0;
+    margin: 0 0 0;
+  }
+}
+
+.production__group-botton {
+  padding: 0 33px 0 34px;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 0 40px 46px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    grid-area: button;
+    padding: 0 57px 60px 79px;
+  }
+}
+
+.production__text {
+  margin: 0 0 41px;
+  font-size: 13px;
+
+  @media (min-width: variables.$width-tablet) {
+    font-size: 15px;
+    line-height: 30px;
+    margin: 0 0 40px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    margin: 0 0 51px;
+  }
+}
+
+.production__button {
+  width: 100%;
+  margin-right: 1px;
+
+  @media (min-width: 610px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: variables.$width-tablet) {
+    font-size: 17px;
+    width: 584px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    width: 230px;
+  }
+}

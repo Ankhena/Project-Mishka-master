@@ -1,0 +1,23 @@
+@use "./variables.scss";
+
+@mixin list-reset {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@mixin link-reset {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+@mixin link-behaviour {
+  &:hover {
+    color: rgba(variables.$dark-main, 0.6);
+  }
+
+  &:active {
+    color: rgba(variables.$dark-main, 0.3);
+  }
+}

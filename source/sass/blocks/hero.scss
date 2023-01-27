@@ -1,0 +1,199 @@
+@use "../global/mixins.scss";
+@use "../global/variables.scss";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 488px;
+  background: variables.$white-snow url("../img/background/hero-mobile@1x.jpg") center top -17px no-repeat;
+  background-image: url("../img/background/hero-mobile@1x.webp");
+  background-size: auto 373px;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/background/hero-mobile@2x.jpg");
+    /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+    background-image: url("../img/background/hero-mobile@2x.webp");
+  }
+
+  @media (min-width: variables.$width-tablet) {
+    min-height: 745px;
+    background: variables.$white-snow url("../img/background/hero-tablet@1x.jpg") center no-repeat;
+    background-image: url("../img/background/hero-tablet@1x.webp");
+    background-size: auto 746px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/background/hero-tablet@2x.jpg");
+      /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+      background-image: url("../img/background/hero-tablet@2x.webp");
+    }
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    background-position: center top;
+  }
+}
+
+.hero__text-wrapper {
+  padding: 0 30px;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 0 50px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    width: 1050px;
+    margin: 0 auto;
+  }
+}
+
+.hero__title {
+  padding: 72px 0;
+  text-align: center;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 155px 0;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    width: 700px;
+    padding: 157px 0;
+    margin: 0 auto;
+  }
+}
+
+.hero__links-wrapper {
+  margin-top: auto;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 0 50px;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: -12px;
+      width: 100%;
+      height: 24px;
+      background: url("../img/svg/zigzag-fill.svg") 0/auto 24px repeat-x;
+    }
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    padding: 0;
+
+    &::after {
+      height: 34px;
+      bottom: -17px;
+      background-size: auto 34px;
+    }
+  }
+}
+
+.hero__list {
+  @include mixins.list-reset;
+
+  @media (min-width: variables.$width-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    width: 1050px;
+    margin: 0 auto;
+  }
+}
+
+.hero__item {
+  display: flex;
+  flex-direction: column;
+  min-height: 103px;
+
+  @media (min-width: variables.$width-tablet) {
+    width: 50%;
+    min-height: 119px;
+  }
+}
+
+.hero__link {
+  position: relative;
+  display: block;
+  flex-grow: 1;
+  font-weight: 700;
+  font-size: 19px;
+  text-decoration: none;
+  color: variables.$light-main;
+  padding: 24px 95px 31px 30px;
+  background-color: variables.$moderate-aquamarine-1;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+  }
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    padding-bottom: 38px;
+    margin-top: -5px;
+    background-color: variables.$moderate-aquamarine-4;
+
+    &::after {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    &::after {
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 26px 100px 33px 36px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &--interior {
+    &::after {
+      width: 40px;
+      height: 62px;
+      top: 23px;
+      right: 36px;
+      background-image: url("../img/sprite.svg#interior");
+    }
+
+    @media (min-width: variables.$width-tablet) {
+      &::after {
+        top: 29px;
+      }
+    }
+  }
+
+  &--toy {
+    background-color: variables.$moderate-aquamarine-2;
+
+    &:hover {
+      background-color: variables.$shamrock;
+    }
+
+    &::after {
+      width: 60px;
+      height: 60px;
+      top: 21px;
+      right: 27px;
+      background-image: url("../img/sprite.svg#toy");
+    }
+
+    @media (min-width: variables.$width-tablet) {
+      &::after {
+        top: 32px;
+        right: 33px;
+      }
+    }
+  }
+}

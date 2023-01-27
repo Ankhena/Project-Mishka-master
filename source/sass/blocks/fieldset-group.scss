@@ -1,0 +1,101 @@
+@use "../global/variables.scss";
+
+.fieldset-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  border: none;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: variables.$moderate-aquamarine-3;
+  }
+
+  &--group-type {
+    margin: 0 0 33px;
+
+    @media (min-width: variables.$width-tablet) {
+      padding: 49px 50px;
+      margin: 0;
+    }
+  }
+
+  &--group-color {
+    margin: 0 0 33px;
+
+    @media (min-width: variables.$width-tablet) {
+      padding: 50px 50px;
+      margin: 0;
+    }
+  }
+
+  &--group-initials {
+    margin: 0 0 34px;
+
+    @media (min-width: variables.$width-tablet) {
+      padding: 50px 50px;
+      margin: 0;
+    }
+  }
+
+  &--group-phone {
+    margin: 0 0 37px;
+
+    @media (min-width: variables.$width-tablet) {
+      padding: 50px 50px 0;
+      margin: 0 0 24px;
+    }
+  }
+
+  &--group-email {
+    margin: 0 0 36px;
+
+    @media (min-width: variables.$width-tablet) {
+      padding: 0 50px 50px;
+      margin: 0;
+    }
+  }
+
+  &--additionally {
+    margin: 0 0 17px;
+
+    @media (min-width: variables.$width-tablet) {
+      padding: 50px 50px;
+      margin: 0 0 3px;
+    }
+  }
+
+  @media (min-width: variables.$width-tablet) {
+    display: grid;
+    grid-template-columns: 167px auto;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    width: 1150px;
+    padding-right: 225px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 175px auto;
+    box-sizing: border-box;
+
+    &--group-color {
+      padding-right: 0;
+    }
+
+    &--additionally {
+      padding-bottom: 49px;
+      margin-bottom: 0;
+    }
+  }
+}

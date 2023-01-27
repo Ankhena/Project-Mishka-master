@@ -1,0 +1,114 @@
+@use "../global/variables.scss";
+
+.modal-add {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$overlay;
+
+  &--opened {
+    display: flex;
+  }
+}
+
+.modal-add__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 29px 30px 46px;
+  background-color: variables.$light-main;
+  box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);
+  border-top: 1px solid variables.$silver;
+  box-sizing: border-box;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 37px 107px 46px;
+    border-left: 1px solid variables.$silver;
+    border-right: 1px solid variables.$silver;
+  }
+}
+
+.modal-add__title {
+  margin: 0 0 15px 18px;
+  width: 160px;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  text-transform: uppercase;
+
+  @media (min-width: variables.$width-tablet) {
+    width: 100%;
+    font-size: 30px;
+    line-height: 57px;
+    margin: 0 0 13px;
+  }
+}
+
+.modal-add__text {
+  margin: 0 0 21px;
+  font-size: 15px;
+  line-height: 30px;
+  color: variables.$dark-bluish-black;
+
+  @media (min-width: variables.$width-tablet) {
+    margin: 0 0 18px;
+    font-size: 17px;
+  }
+}
+
+.modal-add__radio-group {
+  display: flex;
+  gap: 0 7px;
+  margin: 0 0 31px;
+}
+
+.modal-add__text-option {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 78px;
+  height: 48px;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: variables.$dark-bluish-black;
+  border: 2px solid rgba(variables.$dark-bluish-black, 0.1);
+  cursor: pointer;
+
+  &:hover {
+    border-color: rgba(variables.$dark-bluish-black, 0.3);
+  }
+
+  &:active {
+    border-color: variables.$moderate-aquamarine-2;
+  }
+
+  @media (min-width: variables.$width-tablet) {
+    width: 108px;
+  }
+}
+
+.modal-add__radio:checked + .modal-add__mark-radio {
+  position: absolute;
+  content: "";
+  top: -2px;
+  left: -2px;
+  width: 78px;
+  height: 48px;
+  border: 2px solid variables.$moderate-aquamarine-1;
+
+  @media (min-width: variables.$width-tablet) {
+    width: 107px;
+  }
+}
+
+.modal-add__radio:focus-visible + .modal-add__mark-radio {
+  border-color: variables.$shamrock;
+}

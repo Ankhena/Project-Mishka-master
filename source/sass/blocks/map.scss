@@ -1,0 +1,29 @@
+@use "../global/variables.scss";
+
+.map {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.map__map-image {
+  display: block;
+}
+
+.map__google {
+  display: block;
+  width: 100%;
+  border: none;
+
+  @media (min-width: variables.$width-tablet) {
+    height: 457px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    height: 100%;
+  }
+
+  &--nojs {
+    display: none;
+  }
+}

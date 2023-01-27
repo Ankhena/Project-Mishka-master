@@ -1,0 +1,62 @@
+@use "../global/variables.scss";
+
+.field-entry {
+  padding: 16px 0 15px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid variables.$dark-main;
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 18px;
+  box-sizing: border-box;
+  background-color: transparent;
+  cursor: pointer;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 12px 16px 12px;
+    font-size: 19px;
+    line-height: 18px;
+  }
+
+  &--icon {
+    padding-right: 38px;
+
+    @media (min-width: variables.$width-tablet) {
+      padding-right: 57px;
+    }
+
+    @media (min-width: variables.$width-desktop) {
+      padding-right: 38px;
+    }
+  }
+
+  &--textarea {
+    padding: 17px;
+    min-height: 142px;
+    border: 2px solid variables.$dark-bluish-black;
+    resize: vertical;
+  }
+
+  &:not(:placeholder-shown) {
+    border-color: variables.$moderate-aquamarine-2;
+  }
+
+  &:hover:not(:disabled),
+  &:focus-visible {
+    outline: none;
+    border-color: variables.$moderate-aquamarine-2;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  &:invalid:not(:placeholder-shown) {
+    border-color: variables.$error;
+  }
+
+  &::placeholder {
+    color: rgba(variables.$dark-main, 0.3);
+  }
+}

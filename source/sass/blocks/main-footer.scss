@@ -1,0 +1,68 @@
+@use "../global/mixins.scss";
+@use "../global/variables.scss";
+
+.main-footer {
+  background-color: variables.$smoky-white;
+}
+
+.main-footer__wrapper {
+  padding: 0 30px;
+
+  @media (min-width: variables.$width-tablet) {
+    display: flex;
+    padding: 44px 50px 52px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    width: 1050px;
+    margin: 0 auto;
+  }
+}
+
+.main-footer__logo {
+  display: none;
+  color: inherit;
+
+  &:hover {
+    color: variables.$shamrock;
+  }
+
+  &:focus-visible {
+    outline: 2px solid variables.$shamrock;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    color: rgba(variables.$shamrock, 0.3);
+  }
+
+  @media (min-width: variables.$width-tablet) {
+    display: block;
+  }
+}
+
+.main-footer__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  box-shadow: inset 0 -1px 0 0 variables.$platinum;
+
+  @media (min-width: variables.$width-tablet) {
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+.main-footer__copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 23px 0 22px;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 0;
+  }
+}

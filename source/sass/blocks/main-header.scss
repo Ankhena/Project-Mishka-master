@@ -1,0 +1,56 @@
+@use "../global/variables.scss";
+
+.main-header {
+  min-height: 79px;
+  border-bottom: 1px solid variables.$linen;
+
+  @media (max-width: variables.$width-mobile) {
+    position: relative;
+  }
+}
+
+.main-header__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: variables.$width-tablet) {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    width: 1050px;
+    margin: 0 auto;
+  }
+}
+
+.main-header__logo {
+  @media (max-width: variables.$width-mobile) {
+    margin: 22px auto;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    position: absolute;
+    left: calc(43% + 5px);
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px variables.$shamrock;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.main-header__logo-image {
+  display: block;
+}

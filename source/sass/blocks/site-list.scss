@@ -1,0 +1,60 @@
+@use "../global/mixins.scss";
+@use "../global/variables.scss";
+
+.site-list {
+  @include mixins.list-reset;
+  font-weight: 700;
+
+  @media (min-width: variables.$width-tablet) {
+    position: absolute;
+    top: 100%;
+    left: 50px;
+    right: 40%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-size: 15px;
+    transform: translateX(-18px);
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    position: static;
+    align-content: flex-start;
+    transform: translateX(-36px);
+    max-width: 455px;
+  }
+}
+
+.site-list__item {
+  @media (max-width: variables.$width-mobile) {
+    box-shadow: inset 0 1px 0 0 variables.$linen;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    &:nth-child(odd) {
+      box-shadow: inset -1px 0 0 0 variables.$linen;
+    }
+  }
+}
+
+.site-list__link {
+  @include mixins.link-reset;
+  @include mixins.link-behaviour;
+  display: block;
+  padding: 28px 31px 27px 76px;
+
+  @media (min-width: variables.$width-tablet) {
+    box-shadow: none;
+    padding: 21px 18px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    font-size: 17px;
+    padding: 33px 36px 31px;
+  }
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 2px variables.$shamrock;
+    outline: none;
+  }
+}

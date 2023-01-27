@@ -1,0 +1,21 @@
+@use "../global/variables.scss";
+
+.text-option {
+  display: block;
+  position: relative;
+  padding: 10px 0 10px 61px;
+  font-weight: 700;
+  line-height: 18px;
+  cursor: pointer;
+
+  @media (min-width: variables.$width-tablet) {
+    padding: 17px 0 17px 81px;
+    font-size: 19px;
+    line-height: 18px;
+  }
+
+  @media (min-width: variables.$width-desktop) {
+    padding-top: 19px;
+    padding-bottom: 15px;
+  }
+}
