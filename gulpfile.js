@@ -99,7 +99,7 @@ const copy = (done) => {
 // Clean
 
 const clean = () => {
-  return del('build');
+  return deleteAsync ('build');
 };
 
 // Server
